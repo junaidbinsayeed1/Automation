@@ -5,22 +5,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class SignupPage 
+import StepDefination.Base;
+
+public class SignupPage extends Base
 {
-	WebDriver driver;
+	public WebDriver driver;
 	
 	public SignupPage(WebDriver driver)
 	{
 		this.driver = driver;
 		PageFactory.initElements(driver , this);
-	}
-	
-	@FindBy(css = "h3.LC20lb.MBeuO.DKV0Md")
-	WebElement clickOnHomepageLink;
-  
-	public void click_homepage_link()
-	{
-		clickOnHomepageLink.click();
 	}
 	
 	@FindBy(xpath = "//a[@href='/login']")
@@ -34,17 +28,17 @@ public class SignupPage
 	@FindBy(name = "name")
 	WebElement enterName;
   
-	public void enter_name(String name)
+	public void enter_name(String Name)
 	{
-		enterName.sendKeys(name);
+		enterName.sendKeys(Name);
 	}
 	
 	@FindBy(xpath = "//*[@data-qa='signup-email']")
 	WebElement enterEmail;
   
-	public void enter_email(String email)
+	public void enter_email(String Email_Address)
 	{
-		enterEmail.sendKeys(email);
+		enterEmail.sendKeys(Email_Address);
 	}
 	
 	@FindBy(xpath = "//*[@data-qa='signup-button']")
@@ -66,9 +60,9 @@ public class SignupPage
 	@FindBy(id = "password")
 	WebElement enterPassword;
 	  
-	public void enter_password(String password)
+	public void enter_password(String Password)
 	{
-		enterPassword.sendKeys(password);
+		enterPassword.sendKeys(Password);
 	}
 		
 	@FindBy(id = "days")
@@ -98,57 +92,65 @@ public class SignupPage
 	@FindBy(id = "first_name")
 	WebElement enterFirstName;
 	  
-	public void enter_firstname(String firstname)
+	public void enter_firstname(String First_name)
 	{
-		enterFirstName.sendKeys(firstname);
+		enterFirstName.sendKeys(First_name);
 	}
 	
 	@FindBy(id = "last_name")
 	WebElement enterLastName;
 	  
-	public void enter_lastname(String lastname)
+	public void enter_lastname(String Last_name)
 	{
-		enterLastName.sendKeys(lastname);
+		enterLastName.sendKeys(Last_name);
+	}
+	
+	@FindBy(id = "company")
+	WebElement enterCompany;
+	  
+	public void enter_company(String Company)
+	{
+		enterCompany.sendKeys(Company);
 	}
 	
 	@FindBy(id = "address1")
 	WebElement enterAddress;
 	  
-	public void enter_address(String address)
+	public void enter_address(String Address)
 	{
-		enterAddress.sendKeys(address);
+		enterAddress.sendKeys(Address);
 	}
 	
 	@FindBy(id = "state")
 	WebElement enterState;
 	  
-	public void enter_state(String state)
+	public void enter_state(String State)
 	{
-		enterState.sendKeys(state);
+		enterState.sendKeys(State);
 	}
 	
 	@FindBy(id = "city")
 	WebElement enterCity;
 	  
-	public void enter_city(String city)
+	public void enter_city(String City)
 	{
-		enterCity.sendKeys(city);
+		enterCity.sendKeys(City);
 	}
 	
 	@FindBy(id = "zipcode")
 	WebElement enterZipcode;
 	  
-	public void enter_zipcode(String zipcode)
+	public void enter_zipcode(String Zipcode)
 	{
-		enterZipcode.sendKeys(zipcode);
+		enterZipcode.sendKeys(Zipcode);
 	}
 	
 	@FindBy(id = "mobile_number")
 	WebElement enterMobileNumber;
 	  
-	public void enter_mobilenumber(String number)
+	public void enter_mobilenumber(String Mobile_Number)
 	{
-		enterMobileNumber.sendKeys(number);
+		enterMobileNumber.sendKeys(Mobile_Number);
 	}
 	
 	@FindBy(css = "button.btn.btn-default")

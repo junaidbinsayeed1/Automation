@@ -1,37 +1,33 @@
-Feature: Automation Exercise E-commerce Site
+Feature: Automation Exercise Registration
 
 Background:
-Given user needs to open the browser
-When user navigates to google homepage
-Then user needs to type automation exercise in the search bar and press enter
-And click the homepage link
 
-
+	Given Launch browser
+	When Navigate to google homepage
+	Then Type AUTOMATION EXCERCISE text in the search bar and press enter
+	And Click on the homepage link
+	
+	
 Scenario Outline:
-When user needs to select signup link
-Then user enters <name> and <email>
-And click on signup button
-Then user clicks on title
-Then user needs to create password <password>
-Then user needs to select date of birth
-Then user enter first name as <firstname>
-Then user enter last name as <lastname>
-Then user enter address as <address>
-Then user enter state as <state>
-Then user enter city as <city>
-Then user enter zipcode as <zipcode>
-Then user enter mobile number as <number>
-And click on create account button
-Then verify account created message
-And click on continue button
-Then click on delete account button
-Then verify account deleted message
-And click continue
-Then close the browser
 
-Examples:
-| name | email 			      |password|firstname | lastname | address  | state | city | zipcode | number    |
-| test | test2@automation.com |test123 |test      | user     | 123avenue| state | city | 012345  | 1234567890|
-
-
-
+	When User verify that home page is visible successfully
+	Then Click on SIGNUP / LOGIN button
+	Then Verify NEW USER SIGNUP! text is visible
+	Then Enter name as <Name> and email address as <Email>
+	And Click on SIGNUP button
+	Then Verify that ENTER ACCOUNT INFORMATION text is visible
+	Then Fill details: TITLE, PASSWORD as <Password> and DATE OF BIRTH
+	Then Fill details: <First_name>, <Last_name>, <Company>, <Address>
+	Then Select COUNTRY and Fill details: <State>, <City>, <Zipcode>, <Mobile_Number>
+	And Click on CREATE ACCOUNT button
+	Then Verify that ACCOUNT CREATED! text is visible
+	Then Click on CONTINUE button
+	Then Verify that Logged in as <Name> is visible
+	Then Click on DELETE ACCOUNT button
+	Then Verify that ACCOUNT DELETED! text is visible and click on CONTINUE button
+	Then Close the browser
+	
+	
+	Examples:
+		| Name | Email	              | Password | First_name | Last_name | Company | Address   | State | City | Zipcode | Mobile_Number | 
+		| Test | test2@automation.com | test123  | Test       | User      | company | 123avenue | state | city | 012345  | 1234567890    |
