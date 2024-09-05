@@ -25,7 +25,7 @@ Scenario Outline:
 	Then Verify that Logged in as <Name> is visible
 	Then Click on DELETE ACCOUNT button
 	Then Verify that ACCOUNT DELETED! text is visible and click on CONTINUE button
-	Then Close the browser
+	And Close the browser
 	
 	
 	Examples:

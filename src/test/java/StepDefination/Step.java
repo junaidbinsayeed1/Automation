@@ -1,13 +1,17 @@
 package StepDefination;
 
 import java.time.Duration;
+import java.util.List;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import PageObject.ContactusPage;
 import PageObject.HeaderPage;
+import PageObject.ProductPage;
 import PageObject.SignupPage;
 import io.cucumber.java.en.*;
 
@@ -157,6 +161,7 @@ public class Step extends Base
 		spage.click_continue();
 	}
 	
+	
 //**********************************************************CONTACT US FEATURE*******************************************************************************//
 
 		
@@ -207,14 +212,15 @@ public class Step extends Base
 	  driver.getTitle();
 	}
 	
-	@Then("Close the browser")
+	@And("Close the browser")
 	public void close_the_browser() 
 	{
 	    driver.close();
 	}
 	
-//**********************************************************HEADER BUTTONS FEATURE*******************************************************************************//
 	
+//**********************************************************HEADER BUTTONS FEATURE*******************************************************************************//
+
 	
 	@Then("User clicks on PRODUCT button")
 	public void user_clicks_on_product_button() 
@@ -274,7 +280,55 @@ public class Step extends Base
 	@Then("Verify user is navigated to video tutorials page successfully")
 	public void verify_user_is_navigated_to_video_tutorials_page_successfully() 
 	{
-		Assert.assertEquals(driver.getTitle(),"AutomationExercise - Youtube");
+		Assert.assertEquals(driver.getTitle(),"AutomationExercise - YouTube");
+	}
+
+	
+//**********************************************************CONTACT US FEATURE*******************************************************************************//
+
+	
+	@When("User click on PRODUCT button")
+	public void user_click_on_product_button() 
+	{
+		prdpage = new ProductPage(driver);
+		prdpage.click_on_products();
+	}
+	
+	@Then("Verify user is navigated to ALL PRODUCTS page successfully")
+	public void verify_user_is_navigated_to_all_products_page_successfully() 
+	{
+		Assert.assertEquals(driver.getCurrentUrl(),"https://automationexercise.com/products");
+	}
+
+	@When("The products list is visible")
+	public void the_products_list_is_visible()
+	{
+		Assert.assertEquals(driver.findElement(By.xpath("//*[text()='All Products']")).getText(),"ALL PRODUCTS");
+		List<WebElement> listofproducts = driver.findElements(By.className("features_items"));
+		System.out.println(listofproducts.size());
+	}
+
+	@Then("Click on VIEW PRODUCT of second product")
+	public void click_on_view_product_of_second_product() 
+	{
+	   prdpage.click_on_view_product_button();
+	}
+
+	@When("User is landed to product detail page")
+	public void user_is_landed_to_product_detail_page() 
+	{
+		Assert.assertEquals(driver.getTitle(),"Automation Exercise - Product Details");
+	}
+
+	@Then("Verify that detail is visible: product name, category, price, availability, condition, brand")
+	public void verify_that_detail_is_visible_product_name_category_price_availability_condition_brand() 
+	{
+		Assert.assertEquals(driver.findElement(By.xpath("//*[text()='Men Tshirt']")).getText(),"Men Tshirt");
+		Assert.assertEquals(driver.findElement(By.xpath("//*[text()='Category: Men > Tshirts']")).getText(),"Category: Men > Tshirts");
+		Assert.assertEquals(driver.findElement(By.xpath("//*[text()='Rs. 400']")).getText(),"Rs. 400");
+		Assert.assertEquals(driver.findElement(By.xpath("//*[text()=' In Stock']")).getText(),"Availability: In Stock");
+		Assert.assertEquals(driver.findElement(By.xpath("//*[text()=' New']")).getText(),"Condition: New");
+		Assert.assertEquals(driver.findElement(By.xpath("//*[text()=' H&M']")).getText(),"Brand: H&M");
 	}
 
 

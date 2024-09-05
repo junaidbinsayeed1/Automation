@@ -17,7 +17,7 @@ Scenario Outline:
 	And Click on OK button on alert box
 	Then Verify success message SUCCESS! YOUR DETAILS HAVE BEEN SUBMITTED SUCCESSFULLY is visible
 	Then Click on HOME button and verify that user landed to home page successfully
-	Then Close the browser
+	And Close the browser
 	
 	Examples:
 	

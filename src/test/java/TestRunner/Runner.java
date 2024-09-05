@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions
 		(
-			features = "C:\\Users\\Junaid Bin Sayeed\\git\\My Repo\\Framework\\src\\main\\resources\\Features\\Automation Exercise\\Headerbuttons.feature",
+			features = "C:\\Users\\Junaid Bin Sayeed\\git\\My Repo\\Framework\\src\\main\\resources\\Features\\Automation Exercise\\Products.feature",
 			glue = {"StepDefination"},
 			dryRun = false,
 			monochrome = true,

@@ -23,7 +23,7 @@ public class HeaderPage
 		clickOnHomepage.click();
 	}
 	
-	@FindBy(className = "material-icons.card_travel")
+	@FindBy(css = "i.material-icons.card_travel")
 	WebElement clickOnProducts;
   
 	public void click_on_products()
@@ -31,7 +31,7 @@ public class HeaderPage
 		clickOnProducts.click();
 	}
 	
-	@FindBy(className = "fa.fa-shopping-cart")
+	@FindBy(css = "i.fa.fa-shopping-cart")
 	WebElement clickOnCart;
   
 	public void clik_on_cart()
@@ -39,7 +39,7 @@ public class HeaderPage
 		clickOnCart.click();
 	}
 	
-	@FindBy(className = "(//*[text()=' Test Cases']")
+	@FindBy(xpath = "//*[text()=' Test Cases']")
 	WebElement clickOnTestCases;
   
 	public void clik_on_test_cases()
@@ -47,7 +47,7 @@ public class HeaderPage
 		clickOnTestCases.click();
 	}
 	
-	@FindBy(xpath = "(//*[text()=' API Testing'])")
+	@FindBy(xpath = "//*[text()=' API Testing']")
 	WebElement clickOnApi;
   
 	public void clik_on_api()
@@ -55,7 +55,7 @@ public class HeaderPage
 		clickOnApi.click();
 	}
 	
-	@FindBy(className = "fa.fa-youtube-play")
+	@FindBy(css = "i.fa.fa-youtube-play")
 	WebElement clickOnVideoTutorials;
   
 	public void clik_on_video_tutorials()
